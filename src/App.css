@@ -1,38 +1,110 @@
 .App {
+  width: 1400px;
+  margin: 0 auto;
+}
+h1 {
   text-align: center;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.thin {
+  font-weight: 200;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.card__item {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+}
+.card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  text-align: center;
+  box-shadow: 0 0 15px black;
+  background-color: #222831;
+  /* margin-right: 20px; */
+  margin: 10px 10px 10px 10px;
+  border-radius: 25px;
+  animation-duration: 2s;
+  animation-name: cardSlideInRight;
+}
+/* .delete {
+  animation: flipOutX 3s;
+} */
+.delete::after {
+  content: '\00d7';
+  cursor: pointer;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  color: grey;
+}
+.city__name {
+  font-weight: 400;
+}
+.max-mix {
+  display: flex;
+  justify-content: space-around;
+  padding-top: 35px;
+}
+.select {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.select__container {
+  margin-top: 25px;
+  width: 300px;
+  height: 35px;
+  border-radius: 15px;
+  text-align: center;
+  font-size: 22px;
+  font-weight: 200;
+  color: rgb(135, 224, 227);
+  background-color: #222831;
+  outline: none;
+  border: none;
+  box-shadow: 0 0 15px rgb(52, 52, 52);
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* @keyframes cardSlideInLeft {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(-2000px);
+    -ms-transform: translateX(-2000px);
+    transform: translateX(-2000px);
   }
-  to {
-    transform: rotate(360deg);
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
+  }
+} */
+
+@keyframes flipOutX {
+  0% {
+    -webkit-transform: perspective(400px) rotateX(0deg);
+    -ms-transform: perspective(400px) rotateX(0deg);
+    transform: perspective(400px) rotateX(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    -webkit-transform: perspective(400px) rotateX(90deg);
+    -ms-transform: perspective(400px) rotateX(90deg);
+    transform: perspective(400px) rotateX(90deg);
+    opacity: 0;
+  }
+}
+
+@keyframes cardSlideInRight {
+  0% {
+    opacity: 0;
+    -webkit-transform: translateX(2000px);
+    -ms-transform: translateX(2000px);
+    transform: translateX(2000px);
+  }
+
+  100% {
+    -webkit-transform: translateX(0);
+    -ms-transform: translateX(0);
+    transform: translateX(0);
   }
 }
